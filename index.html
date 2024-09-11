@@ -5,14 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AR.js with Three.js</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-
-  <!-- Include AR.js -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
   <script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.min.js"></script>
   
-  <!-- Include Three.js -->
-  
-  <!-- Styling -->
   <style>
     body, html { margin: 0; overflow: hidden; }
   </style>
@@ -20,7 +14,7 @@
 <body>
   
   <!-- AR Scene -->
-  <a-scene embedded arjs>
+  <a-scene embedded arjs="sourceType: webcam;">
     <!-- Marker: You can use Hiro marker or upload your own -->
     <a-marker preset="hiro">
       <!-- Attaching 3D Model -->
@@ -30,10 +24,10 @@
     <!-- Camera for AR -->
     <a-entity camera></a-entity>
     
-      <!-- 3D Model Asset -->
-      <a-assets>
-        <a-asset-item id="model" src="fast.glb"></a-asset-item>
-      </a-assets>
+    <!-- 3D Model Asset -->
+    <a-assets>
+      <a-asset-item id="model" src="fast.glb"></a-asset-item>
+    </a-assets>
   </a-scene>
 
 </body>
